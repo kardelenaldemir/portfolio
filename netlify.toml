@@ -8,6 +8,9 @@
   status = 301
   force = true
 
+# Applied to every path. A rule scoped to "/index.html" would NOT cover "/",
+# because Netlify matches the requested path, not the resolved file.
+# The page is self-contained: no external scripts, styles, fonts or images.
 [[headers]]
   for = "/*"
   [headers.values]
@@ -16,13 +19,7 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
     Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
-
-# The page is self-contained: no external scripts, styles, fonts or images.
-[[headers]]
-  for = "/index.html"
-  [headers.values]
     Content-Security-Policy = "default-src 'none'; img-src 'self' data:; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'; frame-ancestors 'self'"
-    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*.png"

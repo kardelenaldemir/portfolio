@@ -1,10 +1,9 @@
 """
 Builds public/index.html from src/page.html.
 
-The source file holds only <title>, <style> and the page markup, so the same
-file can be published as a Claude Artifact (which supplies its own wrapper)
-and shipped as a standalone site. This script adds the doctype, <head>,
-meta tags and the CSS reset the Artifact wrapper would otherwise provide.
+The source file holds only <title>, <style> and the page markup. This script
+wraps it into a complete document, adding the doctype, <head>, meta tags and
+the CSS reset, so the markup stays easy to edit on its own.
 
     python build.py [path-to-source.html]
 """
@@ -67,7 +66,7 @@ HEAD = """<!doctype html>
 
 """
 
-# The Artifact wrapper ships a reset; a standalone page needs its own.
+# Minimal reset, kept here so src/page.html carries no boilerplate.
 RESET = (
     "  *, *::before, *::after { box-sizing: border-box; }\n"
     "  img { max-width: 100%; height: auto; }\n"
