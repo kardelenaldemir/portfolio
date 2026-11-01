@@ -140,6 +140,33 @@
   .rolebar a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
   .rolebar a:hover { text-decoration-thickness: 2px; }
 
+  .role-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.45rem 1.1rem;
+  }
+
+  .cv-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.26rem 0.5rem;
+    border: 1px solid currentColor;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+  }
+
+  .cv-link:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .field-ink .cv-link:hover {
+    background: var(--paper);
+    color: var(--ink);
+  }
+
   .toolline {
     margin: 1.1rem 0 0;
     font-family: var(--sans);
@@ -341,10 +368,10 @@
     <h1>Kardelen<br><span class="second">Aldemir</span></h1>
     <div class="rolebar">
       <span data-i18n="role">Computer Engineering B.Sc., Yaşar University</span>
-      <span>
+      <span class="role-links">
         <a href="mailto:kardelena0057@gmail.com">kardelena0057@gmail.com</a>
-        &nbsp;&nbsp;
         <a href="https://github.com/kardelenaldemir" target="_blank" rel="noopener">github.com/kardelenaldemir</a>
+        <a class="cv-link" href="/Kardelen_Aldemir_CV.pdf" target="_blank" rel="noopener" type="application/pdf" data-i18n="link.cv">View CV (PDF)</a>
       </span>
     </div>
   </header>
@@ -506,6 +533,7 @@
       <span data-i18n="c.where">İzmir, or remote</span>
       <a href="tel:+905438877445">+90 543 887 7445</a>
       <a href="https://github.com/kardelenaldemir" target="_blank" rel="noopener">github.com/kardelenaldemir</a>
+      <a class="cv-link" href="/Kardelen_Aldemir_CV.pdf" target="_blank" rel="noopener" type="application/pdf" data-i18n="link.cv">View CV (PDF)</a>
     </div>
   </div>
 </div>
@@ -540,6 +568,7 @@
       "link.repo": "See the repository",
       "link.play": "Play it",
       "link.visit": "Visit the site",
+      "link.cv": "View CV (PDF)",
       "h.tools": "What I work with",
       "k.lang": "Languages",
       "k.mobile": "Mobile",
@@ -584,6 +613,7 @@
       "link.repo": "Depoya bak",
       "link.play": "Oyna",
       "link.visit": "Siteyi ziyaret et",
+      "link.cv": "CV'yi görüntüle (PDF)",
       "h.tools": "Kullandıklarım",
       "k.lang": "Diller",
       "k.mobile": "Mobil",
